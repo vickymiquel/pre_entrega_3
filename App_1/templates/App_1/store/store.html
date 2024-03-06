@@ -1,0 +1,15 @@
+{% extends "App_1/father_form.html" %}
+{% load static %}
+
+{% block title %}
+    locales          
+{% endblock %}
+
+{% block form %}
+    <form action="" method="POST"> {% csrf_token %}
+        <table>
+            {{form_2.as_table}}
+        </table>
+        <input type="submit" value="Enviar" >
+    </form>
+{% endblock %}

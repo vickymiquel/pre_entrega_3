@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Buscaste el producto del codigo {{product_code}}</h2>
+    {% for producto in product %}
+        <p>{{product_code}}   {{producto.product_name}} - ${{producto.product_price}}</p>
+    {% endfor %}
+</body>
+</html>

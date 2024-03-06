@@ -1,0 +1,33 @@
+{% extends "App_1/father_form.html" %}
+{% load static %}
+
+{% block title %}
+    productos          
+{% endblock %}
+
+{% block form %}
+    <form action="" method="POST"> {% csrf_token %}
+        <table>
+            {{form_3.as_table}}
+        </table>
+        <input type="submit" value="Enviar" >
+    </form>
+{% endblock %}
+
+{% block search %}
+    <form action="/App_1/results/" method = "GET"> 
+            
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" name = "product_code" id="product_code" placeholder="0000">
+            <label for="floatingInput">Buscar producto por código</label>
+        </div>
+
+        <input type="submit" value = "Buscar">
+    </form>
+    <br>
+    <h2>Buscaste el producto del codigo {{product_code}}</h2>
+    {% for producto in product %}
+        <h4>{{product_code}}   {{producto.product_name}} - ${{producto.product_price}}</h4>
+    {% endfor %}
+{% endblock %}
+
